@@ -1,4 +1,5 @@
 from random import randint
+import winsound
 print('*** Guess the number! ***')
 print()
 print('''Добро пожаловать в игру "Числовая угадайка"!
@@ -30,11 +31,13 @@ def game():
             else: print('Ваше число больше загаданного')
         else:
             print(f'Вы угадали, поздравляем!\nколичество попыток {count}')
+            winsound.PlaySound('beep.wav', winsound.SND_FILENAME)
             break
         print()
         count += 1
         if count == 11:
             print('Вы проиграли, попробуйте еще разок')
+            winsound.PlaySound('beep.wav', winsound.SND_FILENAME)
             break
     more = input('Хотите поиграть еще раз? Введите "y" или "д" ')
     if more in 'yд':
