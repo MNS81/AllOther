@@ -18,4 +18,4 @@ with open('data/1.txt', encoding='utf-8') as first, open('data/2.txt', encoding=
         i_bar.next()
         time.sleep(0.01)
 
-input(f'\n\nСписок уникальных комбинаций сохранен в файл "out.txt" в папке "data".\nНажмите Enter для выхода')
+input(f'\n\nСписок уникальных комбинаций сохранен в файл "out.txt" в папке "data".\nНажмите Enter для выхода.')
