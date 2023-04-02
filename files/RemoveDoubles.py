@@ -1,3 +1,5 @@
+import time
+from progress.bar import IncrementalBar
 with open('data/in.txt', encoding='utf-8') as file, open('data/out.txt', 'w', encoding='utf-8') as outfile:
     print('*** Remove Doubles ***')
     print()
@@ -10,4 +12,8 @@ with open('data/in.txt', encoding='utf-8') as file, open('data/out.txt', 'w', en
         temp = line.split()
         for word in temp: result.add(word)
     print(*sorted(result), file=outfile, sep='\n')
-input(f'Список сохранен в файл "out.txt" в папке "data".\n\nНажмите Enter для выхода')
+    bar = IncrementalBar('Пум-пум-пи-дум...', max=len(result))
+    for row in sorted(result):
+        bar.next()
+        time.sleep(0.01)
+input(f'\n\nСписок сохранен в файл "out.txt" в папке "data".\n\nНажмите Enter для выхода')
