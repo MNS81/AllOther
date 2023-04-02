@@ -41,7 +41,7 @@ def game():
         print()
         game()
     else:
-        print('До свидания!')
+        print(f'\nДо свидания!\n')
         input('Нажмите Enter для выхода')
 
 game()
