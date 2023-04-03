@@ -5,13 +5,21 @@ buy_list = {1: ['Колбаса', 450], 2: ['Молоко', 100], 3: ['Карт�
 print('Список товаров:')
 [print('\t', k, v[0]) for k, v in buy_list.items()]
 print(f'\t 0 выход')
+print(f'\t 111 Посмотреть корзину')
 
 summ, count = 0, 0
+spisok = dict()
 while (s := int(input('\nВведите номер товара: '))) != 0:
     if s in buy_list:
+        spisok[buy_list[s][0]] = spisok.get(buy_list[s][0], 0) + 1
         summ += buy_list[s][1]
         count += 1
         print(f'Вы добавили: {buy_list[s][0]} всего за {buy_list[s][1]}руб.')
+    elif s == 111:
+        print('Корзина:')
+        for k, v in spisok.items():
+            print('\t', k.ljust(15), v, 'шт.')
+        print(f'Сумма заказа: \t\t {summ} руб.')
     else:
         print('Такого товара нет в списке')
 print(f'\nСумма покупок: {summ} руб.\nКоличество товаров: {count} шт.\n')
