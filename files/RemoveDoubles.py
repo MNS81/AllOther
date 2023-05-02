@@ -1,10 +1,10 @@
 import time
 from progress.bar import IncrementalBar
-with open('data/in.txt', encoding='utf-8') as file, open('data/out.txt', 'w', encoding='utf-8') as outfile:
+with open('data/receipt.txt', encoding='utf-8') as file, open('data/out.txt', 'w', encoding='utf-8') as outfile:
     print('*** Remove Doubles ***')
     print()
     print('Программа удаляет дубликаты ключей в списке.')
-    print('Для использования необходимо положить файлы "in.txt" в папку "data".')
+    print('Для использования необходимо положить файлы "receipt.txt" в папку "data".')
     print()
     lines = file.read().splitlines()
     result = set()
